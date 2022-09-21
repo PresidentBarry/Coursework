@@ -14,13 +14,17 @@ namespace Coursework
 
     public partial class Form1 : Form
     {
+        //Wood variables
         double wood = 0;
-        double money = 0;
+        double money = 25;
         double woodUpgrade = 0;
         double woodLvl = 0;
         double woodMult = 0.5;
         double woodUpgCount = 0;
-        double woodCount = 0.2;
+        double woodCount = 2;
+
+
+        double tileCount = 2;
         public Form1()
         {
             InitializeComponent();
@@ -38,7 +42,7 @@ namespace Coursework
                 {
                     woodUpgrade = 25;
                     woodUpgCount++;
-                    woodCount = woodCount + 0.2;
+                    woodCount = woodCount + woodCount * 0.2;
                 }
                 else
                 {
@@ -47,7 +51,7 @@ namespace Coursework
                     woodUpgrade = woodCount * 15;
                     woodUpgCount++;
                 }
-                woodMult = woodMult * 2;
+                woodMult = woodMult + 1;
                 woodLvl = woodLvl + 1;
                 tile1.Text = "Lvl " + woodLvl + " Plantation " +
                     "Produces " + woodMult + " wood per sec " +
@@ -56,8 +60,6 @@ namespace Coursework
             }
             else
             {
-                tile1.Text = "Insufficient Funds!";
-                Thread.Sleep(3000);
                 tile1.Text = "Lvl " + woodLvl + " Plantation " +
                     "Produces " + woodMult + " wood per sec " +
                     "Upgrade: $" + woodUpgrade;
@@ -111,6 +113,141 @@ namespace Coursework
             wood1.Text = "Wood: " + wood;
             money1.Text = "Money: $" + money;
             wood = 0;
+        }
+
+        private void btn_newTile_Click(object sender, EventArgs e)
+        {
+            switch (tileCount)
+            {
+                case 2:
+                    tile2.Visible = true;
+                    break;
+                case 3:
+                    tile3.Visible = true;
+                    break;
+                case 4:
+                    tile4.Visible = true;
+                    break;
+                case 5:
+                    tile5.Visible = true;
+                    break;
+            }
+            lbl_Choice.Visible = true;
+            btn_choiceCancel.Visible = true;
+            btn_choicePlantation.Visible = true;
+            btn_choiceMine.Visible = true;
+            btn_choiceFarm.Visible = true;
+        }
+
+        private void btn_tileChoicePlantation_Click(object sender, EventArgs e)
+        {
+            switch (tileCount)
+            {
+                case 2:
+                    tile2.Text = "Plantation";
+                    tile2.BackColor = Color.SaddleBrown;
+                    break;
+                case 3:
+                    tile3.Text = "Plantation";
+                    tile3.BackColor = Color.SaddleBrown;
+                    break;
+                case 4:
+                    tile4.Text = "Plantation";
+                    tile4.BackColor = Color.SaddleBrown;
+                    break;
+                case 5:
+                    tile5.Text = "Plantation";
+                    tile5.BackColor = Color.SaddleBrown;
+                    break;
+            }
+            lbl_Choice.Visible = false;
+            btn_choiceCancel.Visible = false;
+            btn_choicePlantation.Visible = false;
+            btn_choiceMine.Visible = false;
+            btn_choiceFarm.Visible = false;
+            tileCount++;
+        }
+
+        private void btn_tileChoiceMine_Click(object sender, EventArgs e)
+        {
+            switch (tileCount)
+            {
+                case 2:
+                    tile2.Text = "Mine";
+                    tile2.BackColor = Color.BlueViolet;
+                    break;
+                case 3:
+                    tile3.Text = "Mine";
+                    tile3.BackColor = Color.BlueViolet;
+                    break;
+                case 4:
+                    tile4.Text = "Mine";
+                    tile4.BackColor = Color.BlueViolet;
+                    break;
+                case 5:
+                    tile5.Text = "Mine";
+                    tile5.BackColor = Color.BlueViolet;
+                    break;
+            }
+            lbl_Choice.Visible = false;
+            btn_choiceCancel.Visible = false;
+            btn_choicePlantation.Visible = false;
+            btn_choiceMine.Visible = false;
+            btn_choiceFarm.Visible = false;
+            tileCount++;
+        }
+
+        private void btn_tileChoiceFarm_Click(object sender, EventArgs e)
+        {
+            switch (tileCount)
+            {
+                case 2:
+                    tile2.Text = "Farm";
+                    tile2.BackColor = Color.OrangeRed;
+                    break;
+                case 3:
+                    tile3.Text = "Farm";
+                    tile3.BackColor = Color.OrangeRed;
+                    break;
+                case 4:
+                    tile4.Text = "Farm";
+                    tile4.BackColor = Color.OrangeRed;
+                    break;
+                case 5:
+                    tile5.Text = "Farm";
+                    tile5.BackColor = Color.OrangeRed;
+                    break;
+            }
+            lbl_Choice.Visible = false;
+            btn_choiceCancel.Visible = false;
+            btn_choicePlantation.Visible = false;
+            btn_choiceMine.Visible = false;
+            btn_choiceFarm.Visible = false;
+            tileCount++;
+        }
+
+        private void btn_choiceCancel_Click(object sender, EventArgs e)
+        {
+            switch (tileCount)
+            {
+                case 2:
+                    tile2.Visible = false;
+                    break;
+                case 3:
+                    tile3.Visible = false;
+                    break;
+                case 4:
+                    tile4.Visible = false;
+                    break;
+                case 5:
+                    tile5.Visible = false;
+                    break;
+            }
+            lbl_Choice.Visible = false;
+            btn_choiceCancel.Visible = false;
+            btn_choicePlantation.Visible = false;
+            btn_choiceMine.Visible = false;
+            btn_choiceFarm.Visible = false;
         }
     }
 }
