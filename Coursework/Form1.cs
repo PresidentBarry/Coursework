@@ -17,8 +17,6 @@ namespace Coursework
         Bitmap DrawArea;
         //Wood variables
         double logs = 0;
-        double fruit = 0;
-        double ore = 0;
         double money = 50;
         int woodLvlUp = 5;
         double woodLvl = 0;
@@ -138,9 +136,15 @@ namespace Coursework
             b = 10;
 
             pictureBox1.Image = DrawArea;
-            drawRect();
+                drawRect();
 
             btn_choiceCancel.Visible = true;
+        }
+
+        public int Count()
+        {
+            int count = 0;
+            return count;
         }
 
         private void btn_tileChoicePlantation_Click(object sender, EventArgs e)
@@ -160,7 +164,14 @@ namespace Coursework
             formGraphics.Dispose();
             g.DrawRectangle(mypen, rectangle);
 
+            PictureBox pbIcon = new PictureBox();
 
+            pbIcon.SizeMode = PictureBoxSizeMode.AutoSize;
+            pbIcon.Image = Properties.Resources.Plantation;
+            pbIcon.Location = new Point((rectangle.Right + 5), (rectangle.Top + 9));
+
+            this.Controls.Add(pbIcon);
+            pbIcon.BringToFront();
 
             lbl_choice.Visible = false;
             btn_choiceCancel.Visible = false;
@@ -188,6 +199,14 @@ namespace Coursework
             formGraphics.Dispose();
             g.DrawRectangle(mypen, rectangle);
 
+            PictureBox pbIcon = new PictureBox();
+
+            pbIcon.SizeMode = PictureBoxSizeMode.AutoSize;
+            pbIcon.Image = Properties.Resources.Mine;
+            pbIcon.Location = new Point((rectangle.Right + 5), (rectangle.Top + 9));
+
+            this.Controls.Add(pbIcon);
+            pbIcon.BringToFront();
 
             lbl_choice.Visible = false;
             btn_choiceCancel.Visible = false;
@@ -213,6 +232,15 @@ namespace Coursework
             myBrush.Dispose();
             formGraphics.Dispose();
             g.DrawRectangle(mypen, rectangle);
+
+            PictureBox pbIcon = new PictureBox();
+
+            pbIcon.SizeMode = PictureBoxSizeMode.AutoSize;
+            pbIcon.Image = Properties.Resources.Farm;
+            pbIcon.Location = new Point((rectangle.Right + 5), (rectangle.Top + 9));
+
+            this.Controls.Add(pbIcon);
+            pbIcon.BringToFront();
 
             lbl_choice.Visible = false;
             btn_choiceCancel.Visible = false;
@@ -288,11 +316,27 @@ namespace Coursework
 
         public void pictureBox1_Click(object sender, EventArgs e)
         {
+            Point userClick = new Point(0, 0);
+            if ((btn_choiceCancel.Visible == true) && (lbl_choice.Visible == false))
+            {
+                userClick = verifyRect();
+            }
             if (btn_choiceCancel.Visible == true)
             {
-                drawRect();
+                Rectangle drawTile = new Rectangle(0, 0, 0, 0);
+                drawTile = drawRect();
+                if (!drawTile.Contains(userClick))
+                {
+
+                }
 
             }
+        }
+
+        public Point verifyRect()
+        {
+            Point mousePos = new Point(MousePosition.X - 105, MousePosition.Y - 31);
+            return mousePos;
         }
 
         public Rectangle drawRect()
@@ -365,37 +409,15 @@ namespace Coursework
 
             pictureBox1.Image = DrawArea;
 
+            
+
             return rectangle1;
         }
 
-        private void btn_OreCount_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            money = money + ore;
-            btn_OreCount.Text = "Ore: " + ore;
-            money1.Text = "Money: $" + money;
-            ore = 0;
-        }
 
-        private void btn_cropCount_Click(object sender, EventArgs e)
-        {
-            money = money + fruit;
-            btn_cropCount.Text = "Fruit: " + fruit;
-            money1.Text = "Money: $" + money;
-            fruit = 0;
         }
-
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-            pcb_Menu.Visible = false;
-            btn_Quit.Visible = false;
-            btn_start.Visible = false;
-        }
-
-        private void btn_Quit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
     }
 }
     

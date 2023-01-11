@@ -53,11 +53,13 @@
             this.lbl_upgradesTile = new System.Windows.Forms.Label();
             this.btn_woodUpg1 = new System.Windows.Forms.Button();
             this.btn_DecisionMade = new System.Windows.Forms.Button();
-            this.pcb_Menu = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_start = new System.Windows.Forms.Button();
-            this.btn_Quit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pcb_Menu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +79,7 @@
             // 
             // exit
             // 
-            this.exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(44)))), ((int)(((byte)(56)))));
+            this.exit.BackColor = System.Drawing.Color.Red;
             this.exit.ForeColor = System.Drawing.Color.White;
             this.exit.Location = new System.Drawing.Point(0, 0);
             this.exit.Name = "exit";
@@ -97,36 +99,33 @@
             // 
             // save
             // 
-            this.save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(195)))), ((int)(((byte)(143)))));
             this.save.Location = new System.Drawing.Point(0, 27);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(98, 25);
             this.save.TabIndex = 5;
             this.save.Text = "Save";
-            this.save.UseVisualStyleBackColor = false;
+            this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.button1_Click);
             // 
             // load
             // 
-            this.load.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(195)))), ((int)(((byte)(143)))));
             this.load.Location = new System.Drawing.Point(0, 50);
             this.load.Name = "load";
             this.load.Size = new System.Drawing.Size(98, 25);
             this.load.TabIndex = 6;
             this.load.Text = "Load";
-            this.load.UseVisualStyleBackColor = false;
+            this.load.UseVisualStyleBackColor = true;
             this.load.Click += new System.EventHandler(this.button2_Click);
             // 
             // money1
             // 
-            this.money1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(240)))), ((int)(((byte)(187)))));
             this.money1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.money1.Location = new System.Drawing.Point(0, 73);
             this.money1.Name = "money1";
             this.money1.Size = new System.Drawing.Size(98, 25);
             this.money1.TabIndex = 9;
             this.money1.Text = "Money: $50";
-            this.money1.UseVisualStyleBackColor = false;
+            this.money1.UseVisualStyleBackColor = true;
             // 
             // btn_logCount
             // 
@@ -152,13 +151,12 @@
             // 
             // btn_newTile
             // 
-            this.btn_newTile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(195)))), ((int)(((byte)(143)))));
             this.btn_newTile.Location = new System.Drawing.Point(0, 95);
             this.btn_newTile.Name = "btn_newTile";
             this.btn_newTile.Size = new System.Drawing.Size(98, 25);
             this.btn_newTile.TabIndex = 13;
             this.btn_newTile.Text = "New Tile";
-            this.btn_newTile.UseVisualStyleBackColor = false;
+            this.btn_newTile.UseVisualStyleBackColor = true;
             this.btn_newTile.Click += new System.EventHandler(this.btn_newTile_Click);
             // 
             // lbl_choice
@@ -173,49 +171,43 @@
             // 
             // btn_choicePlantation
             // 
-            this.btn_choicePlantation.BackColor = System.Drawing.Color.Chocolate;
             this.btn_choicePlantation.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
-            this.btn_choicePlantation.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_choicePlantation.Location = new System.Drawing.Point(694, 134);
             this.btn_choicePlantation.Name = "btn_choicePlantation";
             this.btn_choicePlantation.Size = new System.Drawing.Size(54, 22);
             this.btn_choicePlantation.TabIndex = 19;
             this.btn_choicePlantation.Text = "Plantation";
-            this.btn_choicePlantation.UseVisualStyleBackColor = false;
+            this.btn_choicePlantation.UseVisualStyleBackColor = true;
             this.btn_choicePlantation.Visible = false;
             this.btn_choicePlantation.Click += new System.EventHandler(this.btn_tileChoicePlantation_Click);
             // 
             // btn_choiceMine
             // 
-            this.btn_choiceMine.BackColor = System.Drawing.Color.BlueViolet;
             this.btn_choiceMine.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
-            this.btn_choiceMine.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_choiceMine.Location = new System.Drawing.Point(700, 158);
             this.btn_choiceMine.Name = "btn_choiceMine";
             this.btn_choiceMine.Size = new System.Drawing.Size(39, 20);
             this.btn_choiceMine.TabIndex = 20;
             this.btn_choiceMine.Text = "Mine";
-            this.btn_choiceMine.UseVisualStyleBackColor = false;
+            this.btn_choiceMine.UseVisualStyleBackColor = true;
             this.btn_choiceMine.Visible = false;
             this.btn_choiceMine.Click += new System.EventHandler(this.btn_tileChoiceMine_Click);
             // 
             // btn_choiceFarm
             // 
-            this.btn_choiceFarm.BackColor = System.Drawing.Color.DarkOrange;
             this.btn_choiceFarm.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
-            this.btn_choiceFarm.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_choiceFarm.Location = new System.Drawing.Point(700, 180);
             this.btn_choiceFarm.Name = "btn_choiceFarm";
             this.btn_choiceFarm.Size = new System.Drawing.Size(39, 21);
             this.btn_choiceFarm.TabIndex = 21;
             this.btn_choiceFarm.Text = "Farm";
-            this.btn_choiceFarm.UseVisualStyleBackColor = false;
+            this.btn_choiceFarm.UseVisualStyleBackColor = true;
             this.btn_choiceFarm.Visible = false;
             this.btn_choiceFarm.Click += new System.EventHandler(this.btn_tileChoiceFarm_Click);
             // 
             // btn_choiceCancel
             // 
-            this.btn_choiceCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(44)))), ((int)(((byte)(56)))));
+            this.btn_choiceCancel.BackColor = System.Drawing.Color.Red;
             this.btn_choiceCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F);
             this.btn_choiceCancel.ForeColor = System.Drawing.Color.White;
             this.btn_choiceCancel.Location = new System.Drawing.Point(664, 110);
@@ -239,18 +231,17 @@
             // 
             // btn_Upgrades
             // 
-            this.btn_Upgrades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(195)))), ((int)(((byte)(143)))));
             this.btn_Upgrades.Location = new System.Drawing.Point(0, 118);
             this.btn_Upgrades.Name = "btn_Upgrades";
             this.btn_Upgrades.Size = new System.Drawing.Size(98, 24);
             this.btn_Upgrades.TabIndex = 24;
             this.btn_Upgrades.Text = "Upgrades";
-            this.btn_Upgrades.UseVisualStyleBackColor = false;
+            this.btn_Upgrades.UseVisualStyleBackColor = true;
             this.btn_Upgrades.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btn_UpgradesCancel
             // 
-            this.btn_UpgradesCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(44)))), ((int)(((byte)(56)))));
+            this.btn_UpgradesCancel.BackColor = System.Drawing.Color.Red;
             this.btn_UpgradesCancel.ForeColor = System.Drawing.Color.White;
             this.btn_UpgradesCancel.Location = new System.Drawing.Point(810, 110);
             this.btn_UpgradesCancel.Name = "btn_UpgradesCancel";
@@ -270,7 +261,6 @@
             this.btn_OreCount.TabIndex = 27;
             this.btn_OreCount.Text = "Ore: 0";
             this.btn_OreCount.UseVisualStyleBackColor = false;
-            this.btn_OreCount.Click += new System.EventHandler(this.btn_OreCount_Click);
             // 
             // btn_cropCount
             // 
@@ -281,12 +271,11 @@
             this.btn_cropCount.TabIndex = 28;
             this.btn_cropCount.Text = "Crops: 0";
             this.btn_cropCount.UseVisualStyleBackColor = false;
-            this.btn_cropCount.Click += new System.EventHandler(this.btn_cropCount_Click);
             // 
             // lbl_exitConfirm
             // 
             this.lbl_exitConfirm.AutoSize = true;
-            this.lbl_exitConfirm.Location = new System.Drawing.Point(939, 201);
+            this.lbl_exitConfirm.Location = new System.Drawing.Point(441, 91);
             this.lbl_exitConfirm.Name = "lbl_exitConfirm";
             this.lbl_exitConfirm.Size = new System.Drawing.Size(202, 32);
             this.lbl_exitConfirm.TabIndex = 29;
@@ -296,26 +285,23 @@
             // 
             // btn_exitYes
             // 
-            this.btn_exitYes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(195)))), ((int)(((byte)(143)))));
-            this.btn_exitYes.Location = new System.Drawing.Point(942, 245);
+            this.btn_exitYes.Location = new System.Drawing.Point(444, 135);
             this.btn_exitYes.Name = "btn_exitYes";
             this.btn_exitYes.Size = new System.Drawing.Size(89, 30);
             this.btn_exitYes.TabIndex = 30;
             this.btn_exitYes.Text = "Exit";
-            this.btn_exitYes.UseVisualStyleBackColor = false;
+            this.btn_exitYes.UseVisualStyleBackColor = true;
             this.btn_exitYes.Visible = false;
             this.btn_exitYes.Click += new System.EventHandler(this.btn_exitYes_Click);
             // 
             // btn_exitNo
             // 
-            this.btn_exitNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(44)))), ((int)(((byte)(56)))));
-            this.btn_exitNo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_exitNo.Location = new System.Drawing.Point(1052, 245);
+            this.btn_exitNo.Location = new System.Drawing.Point(554, 135);
             this.btn_exitNo.Name = "btn_exitNo";
             this.btn_exitNo.Size = new System.Drawing.Size(89, 30);
             this.btn_exitNo.TabIndex = 31;
             this.btn_exitNo.Text = "Cancel";
-            this.btn_exitNo.UseVisualStyleBackColor = false;
+            this.btn_exitNo.UseVisualStyleBackColor = true;
             this.btn_exitNo.Visible = false;
             this.btn_exitNo.Click += new System.EventHandler(this.btn_exitNo_Click);
             // 
@@ -332,12 +318,11 @@
             // 
             // btn_woodUpg1
             // 
-            this.btn_woodUpg1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(240)))), ((int)(((byte)(187)))));
             this.btn_woodUpg1.Location = new System.Drawing.Point(798, 164);
             this.btn_woodUpg1.Name = "btn_woodUpg1";
             this.btn_woodUpg1.Size = new System.Drawing.Size(137, 30);
             this.btn_woodUpg1.TabIndex = 33;
-            this.btn_woodUpg1.UseVisualStyleBackColor = false;
+            this.btn_woodUpg1.UseVisualStyleBackColor = true;
             this.btn_woodUpg1.Visible = false;
             // 
             // btn_DecisionMade
@@ -350,52 +335,46 @@
             this.btn_DecisionMade.UseVisualStyleBackColor = true;
             this.btn_DecisionMade.Visible = false;
             // 
-            // pcb_Menu
+            // pictureBox4
             // 
-            this.pcb_Menu.Image = global::Coursework.Properties.Resources.idk;
-            this.pcb_Menu.Location = new System.Drawing.Point(2, 1);
-            this.pcb_Menu.Name = "pcb_Menu";
-            this.pcb_Menu.Size = new System.Drawing.Size(1940, 1100);
-            this.pcb_Menu.TabIndex = 35;
-            this.pcb_Menu.TabStop = false;
+            this.pictureBox4.Location = new System.Drawing.Point(1432, 739);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(22, 39);
+            this.pictureBox4.TabIndex = 37;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Visible = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Coursework.Properties.Resources.Farm1;
+            this.pictureBox3.Location = new System.Drawing.Point(1404, 739);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(22, 39);
+            this.pictureBox3.TabIndex = 36;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Visible = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Coursework.Properties.Resources.Plantation1;
+            this.pictureBox2.Location = new System.Drawing.Point(1470, 739);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(22, 39);
+            this.pictureBox2.TabIndex = 35;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::Coursework.Properties.Resources.grass;
-            this.pictureBox1.Location = new System.Drawing.Point(104, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(104, 8);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1808, 1004);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.Size = new System.Drawing.Size(1808, 1003);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // btn_start
-            // 
-            this.btn_start.BackColor = System.Drawing.Color.Transparent;
-            this.btn_start.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_start.Font = new System.Drawing.Font("MV Boli", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_start.Location = new System.Drawing.Point(841, 268);
-            this.btn_start.Name = "btn_start";
-            this.btn_start.Size = new System.Drawing.Size(300, 88);
-            this.btn_start.TabIndex = 36;
-            this.btn_start.Text = "Launch Game";
-            this.btn_start.UseVisualStyleBackColor = false;
-            this.btn_start.Click += new System.EventHandler(this.button1_Click_2);
-            // 
-            // btn_Quit
-            // 
-            this.btn_Quit.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Quit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_Quit.Font = new System.Drawing.Font("MV Boli", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Quit.Location = new System.Drawing.Point(841, 376);
-            this.btn_Quit.Name = "btn_Quit";
-            this.btn_Quit.Size = new System.Drawing.Size(300, 88);
-            this.btn_Quit.TabIndex = 37;
-            this.btn_Quit.Text = "Exit Game";
-            this.btn_Quit.UseVisualStyleBackColor = false;
-            this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
             // 
             // Form1
             // 
@@ -403,9 +382,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
-            this.Controls.Add(this.btn_Quit);
-            this.Controls.Add(this.btn_start);
-            this.Controls.Add(this.pcb_Menu);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btn_woodUpg1);
             this.Controls.Add(this.lbl_upgradesTile);
             this.Controls.Add(this.btn_exitNo);
@@ -436,7 +415,10 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.pcb_Menu)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -471,9 +453,9 @@
         private System.Windows.Forms.Label lbl_upgradesTile;
         private System.Windows.Forms.Button btn_woodUpg1;
         private System.Windows.Forms.Button btn_DecisionMade;
-        private System.Windows.Forms.PictureBox pcb_Menu;
-        private System.Windows.Forms.Button btn_start;
-        private System.Windows.Forms.Button btn_Quit;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
 
