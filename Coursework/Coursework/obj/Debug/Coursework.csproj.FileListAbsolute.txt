@@ -138,13 +138,3 @@ C:\Users\tommy\Source\Repos\CourseworkV1.5\Coursework\CourseworkV1.1\Coursework\
 C:\Users\tommy\Source\Repos\CourseworkV1.5\Coursework\CourseworkV1.1\Coursework\obj\Debug\Coursework.csproj.CoreCompileInputs.cache
 C:\Users\tommy\Source\Repos\CourseworkV1.5\Coursework\CourseworkV1.1\Coursework\obj\Debug\Coursework.exe
 C:\Users\tommy\Source\Repos\CourseworkV1.5\Coursework\CourseworkV1.1\Coursework\obj\Debug\Coursework.pdb
-C:\Users\tommy\Source\Repos\CourseworkV1.8\CourseworkV1.5\Coursework\Coursework\bin\Debug\Coursework.exe.config
-C:\Users\tommy\Source\Repos\CourseworkV1.8\CourseworkV1.5\Coursework\Coursework\bin\Debug\Coursework.exe
-C:\Users\tommy\Source\Repos\CourseworkV1.8\CourseworkV1.5\Coursework\Coursework\bin\Debug\Coursework.pdb
-C:\Users\tommy\Source\Repos\CourseworkV1.8\CourseworkV1.5\Coursework\Coursework\obj\Debug\Coursework.csprojAssemblyReference.cache
-C:\Users\tommy\Source\Repos\CourseworkV1.8\CourseworkV1.5\Coursework\Coursework\obj\Debug\Coursework.Form1.resources
-C:\Users\tommy\Source\Repos\CourseworkV1.8\CourseworkV1.5\Coursework\Coursework\obj\Debug\Coursework.Properties.Resources.resources
-C:\Users\tommy\Source\Repos\CourseworkV1.8\CourseworkV1.5\Coursework\Coursework\obj\Debug\Coursework.csproj.GenerateResource.cache
-C:\Users\tommy\Source\Repos\CourseworkV1.8\CourseworkV1.5\Coursework\Coursework\obj\Debug\Coursework.csproj.CoreCompileInputs.cache
-C:\Users\tommy\Source\Repos\CourseworkV1.8\CourseworkV1.5\Coursework\Coursework\obj\Debug\Coursework.exe
-C:\Users\tommy\Source\Repos\CourseworkV1.8\CourseworkV1.5\Coursework\Coursework\obj\Debug\Coursework.pdb

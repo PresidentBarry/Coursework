@@ -18,19 +18,9 @@ namespace Coursework
         //Wood variables
         double logs = 0;
         double money = 50;
-        int woodLvlUp = 25;
+        int woodLvlUp = 5;
         double woodLvl = 0;
         double woodMult = 0;
-
-        //Mine variables
-        double ore = 0;
-        int oreLvlUp = 85;
-
-        //Farm variables
-        double fruit = 0;
-        int fruitLvlUp = 55;
-
-        bool tilesMade = false;
 
         int tileCount = 0;
         Dictionary<int, string> tileType = new Dictionary<int, string>();
@@ -92,9 +82,54 @@ namespace Coursework
             {
                 Thread.Sleep(1000);
                 logs = logs + woodMult;
-                money1.Text = "Money: $" + money;
 
+                if (btn_sellCancel.Visible == true)
+                {
+                Point mousePos = new Point(MousePosition.X - 105, MousePosition.Y - 31);
+                int a = 10;
+                int b = 10;
+                int c = 100;
+                int d = 100;
+                Rectangle rectangle1 = new Rectangle(a, b, c, d);
+                int changeRectangle = 0;
 
+                for (int j = 0; j < 9; j++)
+                {
+
+                    for (int i = 0; i < 16; i++)
+                    {
+                        if (rectangle1.Contains(mousePos))
+                        {
+                            changeRectangle = 1;
+                            lbl_sell.Visible = false;
+                            btn_sellCancel.Visible = false;
+                            btn_sellCancel.Location = mousePos;
+                        }
+                        else
+                        {
+                            a = a + 110;
+                            rectangle1 = new Rectangle(a, b, c, d);
+                        }
+                    }
+                    if (changeRectangle == 0)
+                    {
+                        a = 10;
+                        b = b + 110;
+                        rectangle1 = new Rectangle(a, b, c, d);
+                    }
+                    }
+
+                }
+                //if (btn_sellCancel.Visible == true)
+                //{
+                //    foreach (Rectangle item in tilePos.Values)
+                //    {
+                //        if (item.Contains(MousePosition))
+                //        {
+                //            btn_sellCancel.Visible = false;
+                //        }
+                //    }
+                //}
                 backgroundWorker1.ReportProgress(0);
             }
         }
@@ -152,14 +187,7 @@ namespace Coursework
 
             //pictureBox1.Image = DrawArea;
 
-            if (tilesMade == false)
-            {
-                CreateTiles();
-                tilesMade = true;
-            }
-
             btn_choiceCancel.Visible = true;
-            btn_choiceCancel.BringToFront();
         }
 
         public int Count()
@@ -195,11 +223,6 @@ namespace Coursework
 
             //this.Controls.Add(pb_tile);
             //pb_tile.BringToFront();
-            if (money >= woodLvlUp)
-            {
-                money = money - woodLvlUp;
-                woodLvlUp = (int)(woodLvlUp * 1.2);
-            }
 
             lbl_choice.Visible = false;
             btn_choiceCancel.Visible = false;
@@ -237,11 +260,6 @@ namespace Coursework
 
             //this.Controls.Add(pb_tile);
             //pb_tile.BringToFront();
-            if (money >= oreLvlUp)
-            {
-                money = money - oreLvlUp;
-                oreLvlUp = (int)(oreLvlUp * 1.2);
-            }
 
             lbl_choice.Visible = false;
             btn_choiceCancel.Visible = false;
@@ -278,11 +296,6 @@ namespace Coursework
 
             //this.Controls.Add(pb_tile);
             //pb_tile.BringToFront();
-            if (money >= fruitLvlUp)
-            {
-                money = money - fruitLvlUp;
-                fruitLvlUp = (int)(fruitLvlUp * 1.2);
-            }
 
             lbl_choice.Visible = false;
             btn_choiceCancel.Visible = false;
@@ -340,21 +353,21 @@ namespace Coursework
 
         public void pictureBox1_Click(object sender, EventArgs e)
         {
-                //Point userClick = new Point(0, 0);
-                //if ((btn_choiceCancel.Visible == true) && (lbl_choice.Visible == false))
-                //{
-                //    userClick = verifyRect();
-                //}
-                //if (btn_choiceCancel.Visible == true)
-                //{
-                //    Rectangle drawTile = new Rectangle(0, 0, 0, 0);
-                //    drawTile = drawRect();
-                //    if (!drawTile.Contains(userClick))
-                //    {
+                Point userClick = new Point(0, 0);
+                if ((btn_choiceCancel.Visible == true) && (lbl_choice.Visible == false))
+                {
+                    userClick = verifyRect();
+                }
+                if (btn_choiceCancel.Visible == true)
+                {
+                    Rectangle drawTile = new Rectangle(0, 0, 0, 0);
+                    drawTile = drawRect();
+                    if (!drawTile.Contains(userClick))
+                    {
 
-                //    }
+                    }
 
-                //}
+                }
         }
 
         public Point verifyRect()
@@ -363,83 +376,84 @@ namespace Coursework
             return mousePos;
         }
 
-        //public Rectangle drawRect()
-        //{
-        //    Graphics g;
-        //    g = Graphics.FromImage(DrawArea);
+        public Rectangle drawRect()
+        {
+            Graphics g;
+            g = Graphics.FromImage(DrawArea);
 
-        //    Pen mypen = new Pen(Color.Red);
-        //    Point mousePos = new Point(MousePosition.X - 105, MousePosition.Y - 31);
+            Pen mypen = new Pen(Color.Red);
+            Point mousePos = new Point(MousePosition.X - 105, MousePosition.Y - 31);
 
-        //    if (btn_DecisionMade.Visible == true)
-        //    {
+            if (btn_DecisionMade.Visible == true)
+            {
 
-        //    }
-        //    else
-        //    {
+            }
+            else
+            {
 
-        //    }
-        //    int changeRectangle = 0;
-        //    int a = 10;
-        //    int b = 10;
-        //    int c = 100;
-        //    int d = 100;
-        //    Point labelPos = new Point(MousePosition.X - a, MousePosition.Y - 50);
-        //    Point plantPos = new Point(MousePosition.X - a, MousePosition.Y - 7);
-        //    Point minePos = new Point(MousePosition.X - a, MousePosition.Y - -17);
-        //    Point farmPos = new Point(MousePosition.X - a, MousePosition.Y - -39);
-        //    Rectangle rectangle1 = new Rectangle(a, b, c, d);
+            }
+            int changeRectangle = 0;
+            int a = 10;
+            int b = 10;
+            int c = 100;
+            int d = 100;
+            Point labelPos = new Point(MousePosition.X - a, MousePosition.Y - 50);
+            Point plantPos = new Point(MousePosition.X - a, MousePosition.Y - 7);
+            Point minePos = new Point(MousePosition.X - a, MousePosition.Y - -17);
+            Point farmPos = new Point(MousePosition.X - a, MousePosition.Y - -39);
+            Rectangle rectangle1 = new Rectangle(a, b, c, d);
 
-        //    for (int j = 0; j < 9; j++)
-        //    {
+            for (int j = 0; j < 9; j++)
+            {
 
-        //        for (int i = 0; i < 16; i++)
-        //        {
-        //            if (rectangle1.Contains(mousePos))
-        //            {
-        //                changeRectangle = 1;
-        //                lbl_choice.Visible = true;
-        //                btn_choicePlantation.Visible = true;
-        //                btn_choiceMine.Visible = true;
-        //                btn_choiceFarm.Visible = true;
-        //                btn_choiceCancel.Location = mousePos;
-        //                lbl_choice.Location = labelPos;
-        //                btn_choicePlantation.Location = plantPos;
-        //                btn_choiceMine.Location = minePos;
-        //                btn_choiceFarm.Location = farmPos;
-        //            }
-        //            else
-        //            {
-        //                a = a + 110;
-        //                rectangle1 = new Rectangle(a, b, c, d);
-        //            }
-        //        }
-        //        if (changeRectangle == 0)
-        //        {
-        //            a = 10;
-        //            b = b + 110;
-        //            rectangle1 = new Rectangle(a, b, c, d);
-        //        }
-        //    }
+                for (int i = 0; i < 16; i++)
+                {
+                    if (rectangle1.Contains(mousePos))
+                    {
+                        changeRectangle = 1;
+                        lbl_choice.Visible = true;
+                        btn_choicePlantation.Visible = true;
+                        btn_choiceMine.Visible = true;
+                        btn_choiceFarm.Visible = true;
+                        btn_choiceCancel.Location = mousePos;
+                        lbl_choice.Location = labelPos;
+                        btn_choicePlantation.Location = plantPos;
+                        btn_choiceMine.Location = minePos;
+                        btn_choiceFarm.Location = farmPos;
+                    }
+                    else
+                    {
+                        a = a + 110;
+                        rectangle1 = new Rectangle(a, b, c, d);
+                    }
+                }
+                if (changeRectangle == 0)
+                {
+                    a = 10;
+                    b = b + 110;
+                    rectangle1 = new Rectangle(a, b, c, d);
+                }
+            }
 
-        //    System.Drawing.Graphics formGraphics;
-        //    formGraphics = this.CreateGraphics();
-        //    formGraphics.Dispose();
-        //    g.DrawRectangle(mypen, a, b, c, d);
+            System.Drawing.Graphics formGraphics;
+            formGraphics = this.CreateGraphics();
+            formGraphics.Dispose();
+            g.DrawRectangle(mypen, a, b, c, d);
 
 
-        //    a = 10;
-        //    b = 10;
+            a = 10;
+            b = 10;
 
-        //    pictureBox1.Image = DrawArea;
+            pictureBox1.Image = DrawArea;
 
             
 
-        //    return rectangle1;
-        //}
+            return rectangle1;
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            CreateTiles();
         }
 
         private void btn_sellTile_Click(object sender, EventArgs e)
@@ -447,55 +461,55 @@ namespace Coursework
             lbl_sell.Visible = true;
             btn_sellCancel.Visible = true;
 
-            //Point mousePos = new Point(MousePosition.X - 105, MousePosition.Y - 31);
-            //int a = 10;
-            //int b = 10;
-            //int c = 100;
-            //int d = 100;
-            //Rectangle rectangle1 = new Rectangle(a, b, c, d);
-            //int changeRectangle = 0;
+            Point mousePos = new Point(MousePosition.X - 105, MousePosition.Y - 31);
+            int a = 10;
+            int b = 10;
+            int c = 100;
+            int d = 100;
+            Rectangle rectangle1 = new Rectangle(a, b, c, d);
+            int changeRectangle = 0;
 
-            //for (int j = 0; j < 9; j++)
-            //{
+            for (int j = 0; j < 9; j++)
+            {
 
-            //    for (int i = 0; i < 16; i++)
-            //    {
-            //        if (rectangle1.Contains(mousePos))
-            //        {
-            //            changeRectangle = 1;
-            //            lbl_sell.Visible = true;
-            //            btn_sellCancel.Visible = true;
-            //            btn_sellCancel.Location = mousePos;
-            //        }
-            //        else
-            //        {
-            //            a = a + 110;
-            //            rectangle1 = new Rectangle(a, b, c, d);
-            //        }
-            //    }
-            //    if (changeRectangle == 0)
-            //    {
-            //        a = 10;
-            //        b = b + 110;
-            //        rectangle1 = new Rectangle(a, b, c, d);
-            //    }
-            //}
+                for (int i = 0; i < 16; i++)
+                {
+                    if (rectangle1.Contains(mousePos))
+                    {
+                        changeRectangle = 1;
+                        lbl_sell.Visible = true;
+                        btn_sellCancel.Visible = true;
+                        btn_sellCancel.Location = mousePos;
+                    }
+                    else
+                    {
+                        a = a + 110;
+                        rectangle1 = new Rectangle(a, b, c, d);
+                    }
+                }
+                if (changeRectangle == 0)
+                {
+                    a = 10;
+                    b = b + 110;
+                    rectangle1 = new Rectangle(a, b, c, d);
+                }
+            }
 
             //lbl_sell.Visible = false;
         }
 
         private void Form1_Click(object sender, EventArgs e)
         {
-            //if (btn_sellCancel.Visible == true)
-            //{
-            //    foreach (Rectangle item in tilePos.Values)
-            //    {
-            //        if (item.Contains(MousePosition))
-            //        {
-            //            btn_sellCancel.Visible = false;
-            //        }
-            //    }
-            //}
+            if (btn_sellCancel.Visible == true)
+            {
+                foreach (Rectangle item in tilePos.Values)
+                {
+                    if (item.Contains(MousePosition))
+                    {
+                        btn_sellCancel.Visible = false;
+                    }
+                }
+            }
         }
 
         public Dictionary<int, string> updateTilePlant()
@@ -543,14 +557,6 @@ namespace Coursework
             }
             else if (btn_choiceCancel.Visible == true)
             {
-                lbl_choice.Visible = true;
-                btn_choicePlantation.Visible = true;
-                btn_choiceMine.Visible = true;
-                btn_choiceFarm.Visible = true;
-                lbl_choice.BringToFront();
-                btn_choicePlantation.BringToFront();
-                btn_choiceMine.BringToFront();
-                btn_choiceFarm.BringToFront();
                 tile.BackColor = Color.Blue;
             }
         }
